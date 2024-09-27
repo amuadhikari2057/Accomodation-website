@@ -1,0 +1,127 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "8080";
+$dbname = "cihe";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Fetch user activity report
+$sql_users = "SELECT COUNT(*) AS total_users FROM users"; 
+$result_users = $conn->query($sql_users);
+
+if (!$result_users) {
+    die("Error in SQL query: " . $conn->error);
+}
+
+$user_data = $result_users->fetch_assoc();
+$total_users = $user_data['total_users'];
+
+// Fetch listings report
+$sql_listings = "SELECT COUNT(*) AS total_listings FROM listings";
+$result_listings = $conn->query($sql_listings);
+
+if (!$result_listings) {
+    die("Error in SQL query: " . $conn->error);
+}
+
+$listing_data = $result_listings->fetch_assoc();
+$total_listings = $listing_data['total_listings'];
+
+
+$hidden_listings = 0; 
+
+$conn->close();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporting & Analytics - CIHE Student Camp</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .report {
+            padding: 20px;
+            background-color: #0047AB;
+            color: white;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .report h3 {
+            margin: 0;
+        }
+
+        .report p {
+            margin: 10px 0;
+        }
+
+        button {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            background-color: #FF6F61;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #E85C4F;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Reporting & Analytics</h2>
+
+        <div class="report">
+            <h3>User Activity Report</h3>
+            <p>Total Users: <?php echo $total_users; ?></p>
+            <p>Active Listings: <?php echo $total_listings - $hidden_listings; ?></p>
+        </div>
+
+        <div class="report">
+            <h3>Listings Report</h3>
+            <p>Total Listings: <?php echo $total_listings; ?></p>
+            <p>Hidden Listings: <?php echo $hidden_listings; ?></p>
+        </div>
+
+        <button onclick="window.location.href='reports-analytics.html'">Back</button>
+    </div>
+
+</body>
+</html>
