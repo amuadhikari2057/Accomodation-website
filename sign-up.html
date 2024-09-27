@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - CIHE Student Camp</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #0047AB;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #003b8c;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .login-link a {
+            color: #0047AB;
+            text-decoration: none;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Sign Up</h2>
+    <form action="register.php" method="POST">
+        <label for="student-id">Student ID</label>
+        <input type="text" id="student-id" name="student_id" required>
+
+        <label for="phone-number">Phone Number</label>
+        <input type="tel" id="phone-number" name="phone_number" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" name="confirm_password" required>
+
+        <button type="submit">Sign Up</button>
+    </form>
+    <div class="login-link">
+        Already have an account? <a href="login.html">Login</a>
+    </div>
+</div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Menu Example</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        footer {
+            background-color: #0047AB;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-section {
+            margin: 10px;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-section h3 {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .footer-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin: 10px 0;
+        }
+
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .footer-section ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-info p, .social-media a {
+            margin: 10px 0;
+            font-size: 16px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .social-media a {
+            margin: 0 10px;
+        }
+
+        .social-media img {
+            width: 24px;
+            height: 24px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Other page content here -->
+
+<footer>
+    <div class="footer-container">
+        <!-- Navigation Links -->
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sign-up.html">User Registration</a></li>
+                <li><a href="new-listing.html">Post Accommodation</a></li>
+                <li><a href="search-accommodation.html">Search Accommodation</a></li>
+                <li><a href="dashboard.html">Super User Control</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+                <li><a href="faq.html">Online FAQs</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="footer-section contact-info">
+            <h3>Contact Us</h3>
+            <p>Email: <a href="mailto:support@cihecamp.com">support@cihecamp.com</a></p>
+            <p>Phone: +123 456 7890</p>
+        </div>
+
+        <!-- Social Media -->
+        <div class="footer-section social-media">
+            <h3>Follow Us</h3>
+            <a href="https://facebook.com" target="_blank"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="https://twitter.com" target="_blank"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="https://instagram.com" target="_blank"><img src="instagram-icon.png" alt="Instagram"></a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
